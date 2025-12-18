@@ -1,0 +1,15 @@
+<h1>Editar Animal</h1>
+<form method="post" action="/animais/editar/{{pet.id}}">
+    <input name="nome" value="{{pet.nome}}" required>
+    <input name="especie" value="{{pet.especie}}" required>
+    <input name="raca" value="{{pet.raca}}">
+    <input name="idade" type="number" value="{{pet.idade}}">
+    <label>Tutor:</label>
+    <select name="tutorId">
+        {{#each tutores}}
+        <option value="{{id}}" {{#ifEquals id ../pet.tutorId}}selected{{/ifEquals}}>{{nome}}</option>
+        {{/each}}
+    </select>
+    <button>Salvar</button>
+</form>
+<a class="back-link" href="/animais">Voltar</a>

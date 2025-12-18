@@ -1,0 +1,16 @@
+<h1>Cadastrar Animal</h1>
+<form method="post" action="/animais/cadastrar">
+    <input name="nome" placeholder="Nome" required>
+    <input name="especie" placeholder="Espécie" required>
+    <input name="raca" placeholder="Raça">
+    <input name="idade" type="number" placeholder="Idade">
+    <label>Tutor:</label>
+    <select name="tutorId" required>
+        <option value="" disabled selected>Selecione um Tutor</option> 
+        {{#each tutores}}
+        <option value="{{id}}">{{nome}}</option>
+        {{/each}}
+    </select>
+    <button>Cadastrar</button>
+</form>
+<a class="back-link" href="/animais">Voltar</a>

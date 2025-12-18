@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+
+    <title></title>
+</head>
+<body>
+    <h1>Agendamentos</h1>
+
+<a class="action-btn action-edit" href="/agendamentos/cadastrar">+ Novo Agendamento</a>
+
+<table>
+    <tr><th>Data</th><th>Pet</th><th>Veterinário</th><th>Serviço</th><th>Ações</th></tr>
+    {{#each agendamentos}}
+    <tr>
+        <td>{{this.data}}</td>
+        <td>{{this.Pet.nome}}</td>
+        <td>{{this.Veterinario.nome}}</td>
+        <td>{{this.Servico.nome}}</td>
+        <td>
+            <a class="action-btn action-edit" href="/agendamentos/editar/{{this.id}}">Editar</a>
+            <a class="action-btn action-delete" href="/agendamentos/excluir/{{this.id}}">Excluir</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+<a class="back-link" href="/">Voltar</a>
+
+
+</body>
+</html>

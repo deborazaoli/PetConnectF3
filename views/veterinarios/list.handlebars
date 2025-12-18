@@ -1,0 +1,17 @@
+<h1>Veterinários</h1>
+<a class="action-btn action-edit" href="/veterinarios/cadastrar">+ Novo Veterinário</a>
+
+<table>
+    <tr><th>Nome</th><th>CRMV</th><th>Ações</th></tr>
+    {{#each veterinarios}}
+    <tr>
+        <td>{{nome}}</td>
+        <td>{{crmv}}</td>
+        <td>
+            <a class="action-btn action-edit" href="/veterinarios/editar/{{id}}">Editar</a>
+            <a class="action-btn action-delete" href="/veterinarios/excluir/{{id}}">Excluir</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+<a class="back-link" href="/">Voltar</a>

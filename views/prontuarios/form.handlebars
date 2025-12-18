@@ -1,0 +1,26 @@
+<h1>Novo Registro de Prontuário</h1>
+
+<form method="post" action="/prontuarios/cadastrar">
+    <label>Selecione o Animal:</label>
+    <select name="petId" required>
+        <option value="" disabled selected>Escolha o paciente</option>
+        {{#each pets}}
+        <option value="{{id}}">{{nome}}</option>
+        {{/each}}
+    </select>
+
+    <label>Veterinário Responsável:</label>
+    <select name="veterinarioId" required>
+        <option value="" disabled selected>Escolha o médico</option>
+        {{#each veterinarios}}
+        <option value="{{id}}">{{nome}} (CRMV: {{crmv}})</option>
+        {{/each}}
+    </select>
+
+    <label>Descrição do Atendimento:</label>
+    <textarea name="descricao" rows="5" placeholder="Sintomas, exames e diagnóstico..." required></textarea>
+
+    <button type="submit">Salvar Prontuário</button>
+</form>
+
+<a class="back-link" href="/prontuarios">Voltar para a lista</a>

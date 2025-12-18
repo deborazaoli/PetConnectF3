@@ -1,0 +1,37 @@
+<h1 style="color: #333;">Histórico de Prontuários</h1>
+
+<div style="margin-bottom: 20px;">
+    <a class="action-btn action-edit" href="/prontuarios/cadastrar">+ Novo Prontuário</a>
+</div>
+
+<table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: #ddd;">
+            <th>Data</th>
+            <th>Paciente (Pet)</th>
+            <th>Veterinário</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each prontuarios}}
+        <tr>
+            <td>{{dataAtendimento}}</td>
+            <td>{{Pet.nome}}</td> 
+            <td>{{Veterinario.nome}}</td>
+            <td>{{descricao}}</td>
+            <td>
+                <a class="action-btn action-edit" href="/prontuarios/editar/{{this.id}}">Editar</a>
+            <a class="action-btn action-delete" href="/prontuarios/excluir/{{this.id}}">Excluir</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{#unless prontuarios}}
+    <p>Nenhum prontuario cadastrado.</p>
+{{/unless}}
+
+<a class="back-link" href="/">Voltar</a>

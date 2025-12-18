@@ -1,0 +1,30 @@
+<h1>Editar Prontuário</h1>
+
+<form method="post" action="/prontuarios/editar/{{prontuario.id}}">
+    
+    <label>Paciente (Pet):</label>
+    <select name="petId" required>
+        {{#each pets}}
+            <option value="{{id}}" {{#ifEquals id ../prontuario.petId}}selected{{/ifEquals}}>
+                {{nome}}
+            </option>
+        {{/each}}
+    </select>
+
+    <label>Veterinário Responsável:</label>
+    <select name="veterinarioId" required>
+        {{#each veterinarios}}
+            <option value="{{id}}" {{#ifEquals id ../prontuario.veterinarioId}}selected{{/ifEquals}}>
+                {{nome}} (CRMV: {{crmv}})
+            </option>
+        {{/each}}
+    </select>
+
+    <label>Descrição/Diagnóstico:</label>
+    <textarea name="descricao" rows="5" required>{{prontuario.descricao}}</textarea>
+
+    <div style="margin-top: 20px;">
+        <button type="submit" class="action-btn action-add">Salvar Alterações</button>
+        <a href="/prontuarios" class="back-link">Cancelar</a>
+    </div>
+</form>

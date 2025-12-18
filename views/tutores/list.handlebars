@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+
+    <title></title>
+</head>
+<body>
+<h1>Tutores</h1>
+
+<a class="action-btn action-edit" href="/tutores/cadastrar">+ Novo Tutor</a>
+
+<table>
+    <tr><th>Nome</th><th>Telefone</th><th>Ações</th></tr>
+    {{#each tutores}}
+    <tr>
+        <td>{{nome}}</td>
+        <td>{{telefone}}</td>
+        <td>
+            <a class="action-btn action-edit" href="/tutores/editar/{{id}}">Editar</a>
+            <a class="action-btn action-delete" href="/tutores/excluir/{{id}}">Excluir</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+<a class="back-link" href="/">Voltar</a>
+
+</body>
+</html>

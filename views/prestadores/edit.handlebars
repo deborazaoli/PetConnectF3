@@ -1,0 +1,10 @@
+<h1>Editar Prestador</h1>
+
+<form method="post" action="/prestadores/editar/{{prestador.id}}">
+    <input name="nome" value="{{prestador.nome}}" required>
+    <input name="funcao" value="{{prestador.funcao}}" required>
+    <input name="telefone" value="{{prestador.telefone}}">
+    <button>Salvar</button>
+</form>
+
+<a class="back-link" href="/prestadores">Voltar</a>

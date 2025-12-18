@@ -1,0 +1,9 @@
+<h1>Editar Tutor</h1>
+
+<form method="post" action="/tutores/editar/{{tutor.id}}">
+    <input name="nome" value="{{tutor.nome}}" required>
+    <input name="telefone" value="{{tutor.telefone}}" required>
+    <button>Salvar</button>
+</form>
+
+<a class="back-link" href="/tutores">Voltar</a>

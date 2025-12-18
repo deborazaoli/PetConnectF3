@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+
+    <title></title>
+</head>
+<body>
+    <h1>Prestadores</h1>
+
+<a class="action-btn action-edit" href="/prestadores/cadastrar">+ Novo Prestador</a>
+
+<table>
+    <tr><th>Nome</th><th>Função</th><th>Telefone</th><th>Ações</th></tr>
+    {{#each prestadores}}
+    <tr>
+        <td>{{nome}}</td>
+        <td>{{funcao}}</td>
+        <td>{{telefone}}</td>
+        <td>
+            <a class="action-btn action-edit" href="/prestadores/editar/{{id}}">Editar</a>
+            <a class="action-btn action-delete" href="/prestadores/excluir/{{id}}">Excluir</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+<a class="back-link" href="/">Voltar</a>
+
+</body>
+</html>

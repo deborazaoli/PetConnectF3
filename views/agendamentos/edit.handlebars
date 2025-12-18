@@ -1,0 +1,33 @@
+<h1>Editar Agendamento</h1>
+
+<form method="post" action="/agendamentos/editar/{{agendamento.id}}">
+    <label>Data e Hora</label>
+    <input name="data" type="datetime-local" value="{{agendamento.data}}" required>
+
+    <label>Pet</label>
+    <select name="petId" required>
+        {{#each pets}}
+        <option value="{{this.id}}" {{#ifEquals this.id ../agendamento.petId}}selected{{/ifEquals}}>{{this.nome}}</option>
+        {{/each}}
+    </select>
+
+    <label>Veterinário</label>
+    <select name="veterinarioId" required>
+        {{#each veterinarios}}
+        <option value="{{this.id}}" {{#ifEquals this.id ../agendamento.veterinarioId}}selected{{/ifEquals}}>{{this.nome}}</option>
+        {{/each}}
+    </select>
+
+    <label>Serviço</label>
+    <select name="servicoId" required>
+        {{#each servicos}}
+        <option value="{{this.id}}" {{#ifEquals this.id ../agendamento.servicoId}}selected{{/ifEquals}}>{{this.nome}}</option>
+        {{/each}}
+    </select>
+
+    <textarea name="observacoes">{{agendamento.observacoes}}</textarea>
+
+    <button>Salvar</button>
+</form>
+
+<a class="back-link" href="/agendamentos">Voltar</a>

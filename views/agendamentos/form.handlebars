@@ -1,0 +1,37 @@
+<h1>Cadastrar Agendamento</h1>
+
+<form method="post" action="/agendamentos/cadastrar">
+    <label>Data e Hora</label>
+    <input name="data" type="datetime-local" required>
+
+    <label>Pet</label>
+    <select name="petId" required>
+    <option value="" disabled selected>Selecione um Pet</option>
+    {{#each pets}}
+    <option value="{{id}}">{{nome}} (Tutor: {{Tutor.nome}})</option>
+    {{/each}}
+</select>
+
+    <label>Veterinário</label>
+    <select name="veterinarioId" required>
+    <option value="" disabled selected>Selecione um Veterinário</option>
+    {{#each veterinarios}}
+    <option value="{{id}}">{{nome}}</option>
+    {{/each}}
+</select>
+
+    
+
+  <label>Serviço</label>
+  <select name="servicoId" required>
+    {{#each servicos}}
+    <option value="{{this.id}}">{{this.nome}} - R$ {{this.preco}}</option>
+    {{/each}}
+  </select>
+
+  <textarea name="observacoes" placeholder="Observações"></textarea>
+
+  <button>Cadastrar</button>
+</form>
+
+<a class="back-link" href="/agendamentos">Voltar</a>
